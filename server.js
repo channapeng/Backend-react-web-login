@@ -29,7 +29,7 @@ app.use(cors())
 
 // router
 // EndPoint http://localhost:8000/api
-readdirSync("./routers").map(r=>app.use("/api", require("./routers/" + r)))
+readdirSync("./routes").map(r=>app.use("/api", require("./routes/" + r)))
 
 // run server
 const port = process.env.PORT
