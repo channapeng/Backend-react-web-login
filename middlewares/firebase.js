@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken")
+// const jwt = require("jsonwebtoken")
 const connectDB = require("../configs/db_firebase")
 
 exports.auth = async (req, res, next) => {
