@@ -7,7 +7,7 @@ const User = require("../models/user")
 exports.register = async (req, res) => {
   try {
     // check user
-    const { name, email, password } = req.body
+    const { email, password } = req.body
     var user = await User.findOne({email})
     if (user) {
       res.status(400).send("user Already exists !!, At register auth controllers")
@@ -15,7 +15,6 @@ exports.register = async (req, res) => {
       // gen salt
       const salt = await bcrypt.genSalt(10)
       user = new User({
-        name,
         email,
         password
       })
